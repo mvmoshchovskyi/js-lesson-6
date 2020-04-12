@@ -332,6 +332,6 @@ arrNew = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14]
 
 for (const i of arrNew) {
 let index=arrNew.findIndex(number => number ==i)
-console.log(index)
+console.log(` key ${i}, index ${index}`)
 
 }
