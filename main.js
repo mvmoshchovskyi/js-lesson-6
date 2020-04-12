@@ -257,6 +257,19 @@ let newCars = [
 ]
 console.log(newCars)
 // Зробили половину автопарку ремонт мотору, що збільшить потужність автомобілів на 10% (переприсвоєння змінної потужності).
+console.log('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
+let newPower = newCars
+    .filter(car=> car.power<400)
+    .map(car=>{
+        return {
+            model:`${car.model}`,
+            power : `${car.power*1.10}`,  // ??????????????????????????????????
+            price:`${car.price}` ,
+            yearProduction:`${car.yearProduction}`,
+            ovner:{name :`${car.ovner.name}`,age :`${car.ovner.age}`,drivingExpirience :`${car.ovner.drivingExpirience}`,}
+        }
+    })
+console.log(newPower)
 // На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
 // Для початку вкладіть всі наші створені автомобілі в масив cars.
 // Далі необхідно рати кожну другу машинку (цикл з кроком в 2), та робити їй підвищення потужності двигуна на 10% та ціну на 5%
@@ -274,4 +287,3 @@ console.log(newCars)
 // Answer: MinIndex = 0, MaxIndex = 0.
 // 2. Key = 4
 // Answer: MinIndex = 3, MaxIndex = 6.
-console.log('he')
