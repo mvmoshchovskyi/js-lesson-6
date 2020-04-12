@@ -330,5 +330,8 @@ arrNew = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14]
 // 2. Key = 4
 // Answer: MinIndex = 3, MaxIndex = 6.
 
-let index = arrNew.findIndex(number => number ===7)
+for (const i of arrNew) {
+let index=arrNew.findIndex(number => number ==i)
 console.log(index)
+
+}
