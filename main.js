@@ -258,11 +258,11 @@ console.log(userHouseNumberEven)
 
 let newCars = [
     {model:'bmv', power: 400 ,  price: 30000, yearProduction: 2018, ovner: { name :'Misha', age:35 , drivingExpirience: 10}},
-    {model:'audi', power: 300 ,  price: 35000, yearProduction: 2019, ovner: { name :'Max', age:25 , drivingExpirience: 5}},
+    {model:'audi', power: 300 ,  price: 35000, yearProduction: 2019, ovner: { name :'Max', age:22 , drivingExpirience: 5}},
     {model:'mercedess', power: 300 ,  price: 36000, yearProduction: 2017, ovner: { name :'Petro', age:34 , drivingExpirience: 7}},
     {model:'toyota', power: 500 ,  price: 40000, yearProduction: 2020, ovner: { name :'Ivan', age:36 , drivingExpirience: 6}},
-    {model:'shkoda', power: 300 ,  price: 25000, yearProduction: 2016, ovner: { name :'Oksana', age:40 , drivingExpirience: 12}},
-    {model:'renout', power: 200 ,  price: 20000, yearProduction: 2014, ovner: { name :'Ruslana', age:28 , drivingExpirience: 5}},
+    {model:'shkoda', power: 300 ,  price: 25000, yearProduction: 2016, ovner: { name :'Oksana', age:30 , drivingExpirience: 2}},
+    {model:'renout', power: 200 ,  price: 20000, yearProduction: 2014, ovner: { name :'Ruslana', age:28 , drivingExpirience: 4}},
     {model:'subaru', power: 500 ,  price: 28000, yearProduction: 2015, ovner: { name :'Vova', age:30 , drivingExpirience: 20}},
 ]
 // console.log(newCars)
@@ -290,7 +290,7 @@ let newCars = [
 // Для початку вкладіть всі наші створені автомобілі в масив cars.
 
 // Далі необхідно рати кожну другу машинку (цикл з кроком в 2), та робити їй підвищення потужності двигуна на 10% та ціну на 5%
-console.log('22222222222222222222222222222')
+
 let element = 0
 for (let i = 0; i < newCars.length; i = i + 2) {
     element = newCars[i];
@@ -310,9 +310,15 @@ for (let i = 0; i < newCars.length; i = i + 2) {
 }
 
 // Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25, то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
+
+const expiriense = newCars.filter(car => car.ovner.drivingExpirience<5 & car.ovner.age>25)
+console.log(expiriense)
 // Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
-//
-//
+let amount = 0
+for (let i = 0; i < newCars.length; i++) {
+    amount += newCars[i].price;
+}
+console.log(amount)
 // Задача: дан отсортированный по возрастанию массив целых чисел. Необходимо вернуть наименьший и наибольший индекс заданного элемента.
 // Входные данные: arr — массив целых чисел значения которых по модулю не больше 10. Размер массива не более 10 элементов.
 // Вывод: наибольший и наименьший индекс в массиве заданного элемента. Если такого элемента нет в массиве, выведите -1.
