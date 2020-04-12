@@ -57,12 +57,22 @@ console.log(nameLength1)
 let nameLength2 = users.sort((user1, user2) => user2.name.length - user1.name.length);
 console.log(nameLength2)
 //- пройтись по ньому та додати кожному юзеру поле id - яке характеризує унікальний індентифікатор (По якому принципу його створювати - ваше рішення), та зберегти це в новий масив (первинний масив залишиться без змін)
-console.log('????????????????????????????????')
 
+let newUsers = users.map(user=>user)
+
+function getRandom(min,max) {
+    min = Math.ceil(min)
+    max=Math.ceil(max)
+    return Math.floor(Math.random()*(max-min))+min
+}
+
+    newUsers.forEach((a)=>{a.id =getRandom(1,100)})
+
+console.log(newUsers)
 
 // - відсортувати його за індентифікатором
-//
-//
+newUsers.sort((user1,user2)=>user1.id-user2.id)
+console.log(newUsers)
 // -- наисать функцию калькулятора с 2мя числами и колбеком
 function calculate(a, b, callback) {
     console.log(callback(a, b))
@@ -263,7 +273,7 @@ let newPower = newCars
     .map(car=>{
         return {
             model:`${car.model}`,
-            power : `${car.power*1.10}`,  // ??????????????????????????????????
+            power : Math.floor(car.power*1.10) ,
             price:`${car.price}` ,
             yearProduction:`${car.yearProduction}`,
             ovner:{name :`${car.ovner.name}`,age :`${car.ovner.age}`,drivingExpirience :`${car.ovner.drivingExpirience}`,}
@@ -271,6 +281,8 @@ let newPower = newCars
     })
 console.log(newPower)
 // На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
+
+
 // Для початку вкладіть всі наші створені автомобілі в масив cars.
 // Далі необхідно рати кожну другу машинку (цикл з кроком в 2), та робити їй підвищення потужності двигуна на 10% та ціну на 5%
 // Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25, то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
