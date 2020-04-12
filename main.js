@@ -265,26 +265,50 @@ let newCars = [
     {model:'renout', power: 200 ,  price: 20000, yearProduction: 2014, ovner: { name :'Ruslana', age:28 , drivingExpirience: 5}},
     {model:'subaru', power: 500 ,  price: 28000, yearProduction: 2015, ovner: { name :'Vova', age:30 , drivingExpirience: 20}},
 ]
-console.log(newCars)
+// console.log(newCars)
+
+
 // Зробили половину автопарку ремонт мотору, що збільшить потужність автомобілів на 10% (переприсвоєння змінної потужності).
-console.log('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
-let newPower = newCars
-    .filter(car=> car.power<400)
-    .map(car=>{
-        return {
-            model:`${car.model}`,
-            power : Math.floor(car.power*1.10) ,
-            price:`${car.price}` ,
-            yearProduction:`${car.yearProduction}`,
-            ovner:{name :`${car.ovner.name}`,age :`${car.ovner.age}`,drivingExpirience :`${car.ovner.drivingExpirience}`,}
-        }
-    })
-console.log(newPower)
+
+// let newPower = newCars
+//     .filter(car=> car.power<400)
+//     .map(car=>{
+//         return {
+//             model:`${car.model}`,
+//             power : Math.floor(car.power*1.10) ,
+//             price:`${car.price}` ,
+//             yearProduction:`${car.yearProduction}`,
+//             ovner:{name :`${car.ovner.name}`,age :`${car.ovner.age}`,drivingExpirience :`${car.ovner.drivingExpirience}`,}
+//         }
+//     })
+// console.log(newPower)
+
+
 // На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
 
 
 // Для початку вкладіть всі наші створені автомобілі в масив cars.
+
 // Далі необхідно рати кожну другу машинку (цикл з кроком в 2), та робити їй підвищення потужності двигуна на 10% та ціну на 5%
+console.log('22222222222222222222222222222')
+let element = 0
+for (let i = 0; i < newCars.length; i = i + 2) {
+    element = newCars[i];
+    console.log({
+            model: `${element.model}`,
+            power: Math.floor(element.power * 1.10),
+            price: `${element.price*1.05}`,
+            yearProduction: `${element.yearProduction}`,
+            ovner: {
+                name: `${element.ovner.name}`,
+                age: `${element.ovner.age}`,
+                drivingExpirience: `${element.ovner.drivingExpirience}`,
+            }
+        }
+    )
+
+}
+
 // Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25, то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
 // Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
 //
